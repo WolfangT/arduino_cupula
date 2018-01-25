@@ -1,0 +1,62 @@
+/* archivo: estilo.css */
+
+body {
+    font-family: Verdana, Sans-serif;
+    background-color: DodgerBlue;
+    text-align: center;
+}
+
+img {
+    float: right;
+}
+
+article {
+    width: 70%;
+    margin: 35px auto 35px auto;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+}
+
+section {
+    margin: 40px auto 50px auto;
+}
+
+div {
+    display: inline-block;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 0px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+.importante {
+    background-color: Crimson;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 20px;
+    font-size: 200%;
+}
+
+h2 {
+    margin: 5px;
+    margin-bottom: 10px;
+    font-size: 150%;
+}
+
+h3 {
+    margin: 5px;
+}
+
+hr {
+    width: 75%;
+}

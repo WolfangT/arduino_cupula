@@ -1,0 +1,82 @@
+<!-- archivo: main.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Control del Observatorio</title>
+    <meta http-equiv="refresh" content="5; URL=http://127.0.0.1:5000/" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+    <!--
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+-->
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <article>
+        <img src="{{ url_for('static', filename='ALDA2.jpg') }}" style="width:200px; height:100px;" />
+        <h1>Observatorio Tayabeixo</h1>
+        {% if _stop %}
+        <section class="importante">
+            <h2>{{ stop }}</h2>
+        </section>
+        {% endif %}
+        <section>
+            <div>
+                <h2>Modo de Funcionamiento</h2>
+                <span>{{ modo }}</span>
+                <h3>Tipo de Automatico</h2>
+                    <form action="/modo_automatico" method="POST">
+                        <span>{{ modo_automatico }}</span>
+                        <input id='modo_automatico' type="submit" value="Cambiar" />
+                    </form>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <div>
+                <h2>Rotación de la Cupula</h2>
+                <span>{{ cupula }}</span>
+                <span>{{ direccion }}</span>
+                <form action="/girar" method="POST">
+                    <input type="text" name="grados" />
+                    <input type="submit" value="Girar" />
+                </form>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <div>
+                <form action="/ventana" method="POST">
+                    <h2>Ventana</h2>
+                    <span>{{ ventana }}</span> {% if _ventana==0 %}
+                    <input disabled id='control_ventana' type="submit" value="Cambiar" /> {% else %}
+                    <input id='control_ventana' type="submit" value="Cambiar" /> {% endif %}
+                </form>
+            </div>
+            <div>
+                <h2>Telescopio</h2>
+                <span>{{ telescopio }}</span>
+            </div>
+        </section>
+        <hr />
+        <section>
+            <!--
+        <div>
+          <h2>Viento</h2>
+          <span>{{ viento }}</span>
+        </div>
+-->
+            <div>
+                <h2>Temperatura</h2>
+                <span>{{ temperatura }}</span>
+            </div>
+            <div>
+                <h2>Humedad</h2>
+                <span '>{{ humedad }}</span>
+        </div>
+      </section>
+    </article>
+    <span>2017 © M y W</span>
+  </body>
+</html>
